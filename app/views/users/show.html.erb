@@ -1,0 +1,23 @@
+
+<div class="jumbotron">
+	<h1>Welcome to Magazine<h1>
+		<%= link_to "Sign up", users_new_path, class: "btn btn-lg btn-default" %>
+</div>
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <h1>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+
+    <% if @user.articles.any? %>
+      <h3>articles (<%= @user.articles.count %>)</h3>
+      <ol class="articles">
+        <%= render @articles %>
+      </ol>
+    <% end %>
+  </div>
+</div>

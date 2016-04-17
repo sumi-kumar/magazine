@@ -1,0 +1,7 @@
+<h1>Article</h1>
+ <span class="timestamp">
+   Posted <%= time_ago_in_words(@article.created_at) %> ago.
+   <%= link_to "delete", @article, method: :delete,
+                                     data: { confirm: "You sure?" } %>
+<h1><%= @article.title %></h1>
+<p><%= @article.text %></p>

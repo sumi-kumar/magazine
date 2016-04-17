@@ -1,0 +1,9 @@
+<%= commentable.body %>
+	<%= render partial:  'comments/form', locals: { commentable: commentable } %>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(commentable.created_at) %> ago.
+    <% if current_user?(commentable.user) %>
+    <%= link_to "delete", commentable, method: :delete,
+                                     data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
